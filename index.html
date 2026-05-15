@@ -1606,9 +1606,162 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
   }
+
+  /* ============ PASSWORD GATE ============ */
+  html.locked, html.locked body { overflow: hidden; height: 100%; }
+  html.locked body > *:not(#pw-gate) { display: none !important; }
+  #pw-gate {
+    position: fixed; inset: 0;
+    background: #212640;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    color: #fff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  #pw-gate .pw-card {
+    width: 100%;
+    max-width: 380px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 32px 28px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  #pw-gate h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  #pw-gate p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin: 0 0 22px;
+    line-height: 1.5;
+  }
+  #pw-gate input {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 999px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+  }
+  #pw-gate input:focus {
+    border-color: #6A6CD6;
+    background: rgba(255,255,255,0.12);
+  }
+  #pw-gate button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px 14px;
+    background: #6A6CD6;
+    border: none;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: inherit;
+  }
+  #pw-gate button:hover { background: #5a5cc5; }
+  #pw-gate .pw-err {
+    color: #ff8a8a;
+    font-size: 12px;
+    margin-top: 10px;
+    min-height: 16px;
+  }
+  /* Floating blurs for the gate background */
+  #pw-gate .gate-blur {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    mix-blend-mode: screen;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  #pw-gate .gate-blur.b1 { width: 380px; height: 380px; background: #6A6CD6; top: -80px; left: -80px; animation: gateFloat1 6s ease-in-out infinite; }
+  #pw-gate .gate-blur.b2 { width: 420px; height: 420px; background: #937EA5; bottom: -100px; right: -100px; animation: gateFloat2 7s ease-in-out infinite; }
+  #pw-gate .gate-blur.b3 { width: 320px; height: 320px; background: #946B6E; top: 40%; left: 60%; animation: gateFloat3 8s ease-in-out infinite; }
+  @keyframes gateFloat1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(80px,60px); } }
+  @keyframes gateFloat2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-60px,-80px); } }
+  @keyframes gateFloat3 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-40px,40px); } }
 </style>
+<script>
+  // Lock immediately so content doesn't flash before the gate renders
+  document.documentElement.classList.add('locked');
+</script>
 </head>
 <body>
+
+  <!-- Password Gate -->
+  <div id="pw-gate">
+    <div class="gate-blur b1"></div>
+    <div class="gate-blur b2"></div>
+    <div class="gate-blur b3"></div>
+    <div class="pw-card">
+      <h1>Protected preview</h1>
+      <p>Enter the password to view this page.</p>
+      <form id="pw-form" autocomplete="off">
+        <input id="pw-input" type="password" placeholder="Password" autofocus />
+        <button type="submit">Unlock</button>
+        <div class="pw-err" id="pw-err"></div>
+      </form>
+    </div>
+  </div>
+  <script>
+    (function () {
+      // SHA-256 of the password — change this if you rotate the password.
+      var expected = '1c1e67f908a60499fc3f3c5129a698f27ca0d21fae054d0123b7b71a4181bea1';
+      var form = document.getElementById('pw-form');
+      var input = document.getElementById('pw-input');
+      var err = document.getElementById('pw-err');
+      var gate = document.getElementById('pw-gate');
+
+      function sha256(str) {
+        var buf = new TextEncoder().encode(str);
+        return crypto.subtle.digest('SHA-256', buf).then(function (h) {
+          return Array.from(new Uint8Array(h)).map(function (b) {
+            return b.toString(16).padStart(2, '0');
+          }).join('');
+        });
+      }
+
+      function unlock() {
+        document.documentElement.classList.remove('locked');
+        if (gate && gate.parentNode) gate.parentNode.removeChild(gate);
+        try { sessionStorage.setItem('pw-ok', '1'); } catch (e) {}
+      }
+
+      // Stay unlocked for this browser tab
+      try { if (sessionStorage.getItem('pw-ok') === '1') unlock(); } catch (e) {}
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        err.textContent = '';
+        sha256(input.value).then(function (h) {
+          if (h === expected) {
+            unlock();
+          } else {
+            err.textContent = 'Incorrect password';
+            input.value = '';
+            input.focus();
+          }
+        });
+      });
+    })();
+  </script>
 
   <!-- Banner -->
   <div class="banner_wrap">
