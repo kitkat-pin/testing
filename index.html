@@ -1,0 +1,2437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blym | Rank on Google. Get cited by AI.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #212640;
+    --bg-light: #ffffff;
+    --bg-neutral: #f5f6fa;
+    --text-dark: #101828;
+    --text-body: #475467;
+    --text-muted: #878f97;
+    --accent: #6A6CD6;
+    --accent-purple: #937EA5;
+    --accent-rose: #946B6E;
+    --border: #e6e8ef;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-dark);
+    background: var(--bg-light);
+    line-height: 1.5;
+    font-size: 16px;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ============ BANNER ============ */
+  .banner_wrap {
+    background: #212640;
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  .banner_wrap a {
+    color: #fff;
+    text-decoration: underline;
+    margin-left: 8px;
+    font-weight: 500;
+  }
+
+  /* ============ NAV ============ */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav_inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text-dark);
+  }
+  .nav-brand svg { width: 28px; height: 28px; flex-shrink: 0; }
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-menu a {
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-menu a:hover { color: var(--accent); }
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    letter-spacing: -0.005em;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  .btn-primary:hover { background: #5a5cc4; transform: translateY(-1px); }
+  .btn-secondary {
+    background: #fff;
+    border-color: var(--border);
+    color: var(--text-dark);
+  }
+  .btn-secondary:hover { background: var(--bg-neutral); border-color: #d0d4dd; }
+  .btn-dark {
+    background: var(--text-dark);
+    color: #fff;
+  }
+  .btn-dark:hover { background: #000; }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 12px 10px;
+  }
+  .btn-ghost:hover { color: var(--accent); }
+
+  /* ============ HERO ============ */
+  .hp-hero_wrap {
+    position: relative;
+    background: #fff;
+    color: var(--text-dark);
+    overflow: hidden;
+    padding: 80px 0 60px;
+  }
+
+  /* Animated blur background — sits ONLY behind the video */
+  .hero-blur-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    border-radius: inherit;
+  }
+  .blur {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    mix-blend-mode: screen;
+    opacity: 0.75;
+    will-change: transform;
+  }
+  .blur-1 { width: 320px; height: 320px; background: #6A6CD6; top: -60px; left: -60px; animation: float1 4s ease-in-out infinite; }
+  .blur-2 { width: 380px; height: 380px; background: #937EA5; top: 20%; right: -80px; animation: float2 5s ease-in-out infinite; }
+  .blur-3 { width: 280px; height: 280px; background: #946B6E; bottom: -60px; left: 25%; animation: float3 6s ease-in-out infinite; }
+  .blur-4 { width: 240px; height: 240px; background: #6A6CD6; top: 30%; left: 35%; animation: float4 4.5s ease-in-out infinite; }
+  .blur-5 { width: 340px; height: 340px; background: #937EA5; bottom: 10%; right: 20%; animation: float5 6.5s ease-in-out infinite; }
+  .blur-6 { width: 220px; height: 220px; background: #946B6E; top: 50%; left: 50%; animation: float6 5s ease-in-out infinite; }
+
+  /* Smaller blurs for dark card backgrounds */
+  .hero-blur-bg.compact .blur { filter: blur(40px); opacity: 0.55; }
+  .hero-blur-bg.compact .blur-1 { width: 160px; height: 160px; top: -40px; left: -40px; }
+  .hero-blur-bg.compact .blur-2 { width: 180px; height: 180px; right: -50px; }
+  .hero-blur-bg.compact .blur-3 { width: 140px; height: 140px; bottom: -30px; }
+  .hero-blur-bg.compact .blur-4 { width: 120px; height: 120px; }
+  .hero-blur-bg.compact .blur-5 { width: 170px; height: 170px; }
+  .hero-blur-bg.compact .blur-6 { width: 110px; height: 110px; }
+
+  /* Wide variant for the final CTA banner */
+  .hero-blur-bg.wide .blur { filter: blur(100px); opacity: 0.55; }
+  .hero-blur-bg.wide .blur-1 { width: 600px; height: 600px; }
+  .hero-blur-bg.wide .blur-2 { width: 700px; height: 700px; }
+  .hero-blur-bg.wide .blur-3 { width: 550px; height: 550px; }
+  .hero-blur-bg.wide .blur-4 { width: 450px; height: 450px; }
+  .hero-blur-bg.wide .blur-5 { width: 650px; height: 650px; }
+  .hero-blur-bg.wide .blur-6 { width: 400px; height: 400px; }
+
+  @keyframes float1 {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(200px,150px) scale(1.1); }
+    66% { transform: translate(100px,300px) scale(0.95); }
+  }
+  @keyframes float2 {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    25% { transform: translate(-200px,100px) scale(1.05); }
+    50% { transform: translate(-300px,-100px) scale(0.9); }
+    75% { transform: translate(-100px,200px) scale(1.1); }
+  }
+  @keyframes float3 {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    50% { transform: translate(150px,-200px) scale(1.15); }
+  }
+  @keyframes float4 {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(-150px,200px) scale(0.85); }
+    66% { transform: translate(250px,100px) scale(1.1); }
+  }
+  @keyframes float5 {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    25% { transform: translate(-100px,-150px) scale(1.1); }
+    50% { transform: translate(-250px,100px) scale(0.95); }
+    75% { transform: translate(100px,-100px) scale(1.05); }
+  }
+  @keyframes float6 {
+    0%, 100% { transform: translate(-50%,-50%) scale(1); }
+    33% { transform: translate(-30%,-70%) scale(1.2); }
+    66% { transform: translate(-70%,-30%) scale(0.9); }
+  }
+  .home-hero_contain {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    background: #fff;
+  }
+  .hero-badge strong { color: var(--text-dark); font-weight: 600; }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+  }
+  .hero-title em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+  }
+  .hero-title em::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: #ff8a5b;
+    opacity: 0.85;
+    z-index: -1;
+    border-radius: 3px;
+  }
+
+  .hero-subtitle {
+    max-width: 580px;
+    margin: 0 auto 32px;
+    color: var(--text-body);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .hero-ctas .btn-secondary {
+    background: #fff;
+    border-color: var(--border);
+    color: var(--text-dark);
+  }
+  .hero-ctas .btn-secondary:hover { background: var(--bg-neutral); }
+
+  .hero-reviews {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 56px;
+    color: var(--text-body);
+    font-size: 13px;
+  }
+  .avatars { display: flex; }
+  .avatars > div {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: -8px;
+    background: linear-gradient(135deg, #6A6CD6, #937EA5);
+  }
+  .avatars > div:first-child { margin-left: 0; background: linear-gradient(135deg, #946B6E, #937EA5); }
+  .avatars > div:nth-child(2) { background: linear-gradient(135deg, #6A6CD6, #946B6E); }
+  .stars { color: #1e1e22; letter-spacing: 1px; font-size: 13px; }
+
+  /* Hero video wrap — animated blur sits in the padding around the video */
+  .hero_video_wrap {
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 56px;
+    border-radius: 18px;
+    background: var(--bg-dark);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero_video_asset {
+    position: relative;
+    padding-top: 56.17%;
+    background: #14172a;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  }
+  .hero_video_asset iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .video-poster {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at center, #1f2540 0%, #14172a 80%);
+  }
+  .video-poster .poster-line {
+    position: absolute;
+    height: 2px;
+    background: rgba(255,255,255,0.06);
+    width: 70%;
+    border-radius: 2px;
+  }
+  .video-poster .poster-line.l1 { top: 30%; }
+  .video-poster .poster-line.l2 { top: 42%; width: 60%; }
+  .video-poster .poster-line.l3 { top: 54%; width: 65%; }
+  .video-poster .poster-line.l4 { top: 66%; width: 55%; }
+  .video-poster .label {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.85);
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .video-poster .label em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+  .play-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(106,108,214,0.4);
+    cursor: pointer;
+    z-index: 2;
+    transform: translate(-30%, 30%);
+  }
+  .play-btn::before {
+    content: '';
+    width: 0; height: 0;
+    border-left: 16px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    margin-left: 4px;
+  }
+
+  /* Client logos */
+  .hero_logos_wrap {
+    position: relative;
+    z-index: 2;
+    margin-top: 56px;
+    text-align: center;
+  }
+  .logos-header {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 24px;
+  }
+
+  /* ============ SECTION LAYOUT ============ */
+  .section {
+    padding: 100px 0;
+  }
+  .section-light { background: #fff; }
+  .section-neutral { background: var(--bg-neutral); }
+
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(106,108,214,0.1);
+    color: var(--accent);
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .section-title em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .section-subtitle {
+    color: var(--text-body);
+    font-size: 16px;
+    max-width: 600px;
+  }
+  .section-header { margin-bottom: 48px; }
+  .section-header.center { text-align: center; margin-left: auto; margin-right: auto; }
+  .section-header.center .section-subtitle { margin: 0 auto; }
+
+  /* ============ THE SPLIT ============ */
+  .split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .check-list { list-style: none; margin-top: 24px; }
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    color: var(--text-body);
+    font-size: 15px;
+  }
+  .check-list li::before {
+    content: '';
+    width: 18px; height: 18px;
+    flex-shrink: 0;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 2px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-size: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .split-visual {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 12px 32px rgba(20,23,42,0.06);
+    min-height: 320px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .mock-card {
+    background: var(--bg-neutral);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .mock-card .mock-line {
+    height: 8px;
+    background: #d9dce6;
+    border-radius: 4px;
+    margin: 8px 0;
+  }
+  .mock-card .mock-line.short { width: 60%; }
+  .mock-card .mock-line.medium { width: 80%; }
+
+  /* ============ 4 STEP CARDS ============ */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  .benefit-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(20,23,42,0.08);
+  }
+  .benefit-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: rgba(106,108,214,0.1);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .benefit-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .benefit-card p {
+    color: var(--text-body);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .benefit-card.dark {
+    background: var(--bg-dark);
+    color: #fff;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .benefit-card.dark > *:not(.hero-blur-bg) { position: relative; z-index: 2; }
+  .benefit-card.dark h3 { color: #fff; font-size: 18px; margin-bottom: 12px; }
+  .benefit-card.dark p { color: rgba(255,255,255,0.6); font-size: 13px; margin-bottom: 18px; }
+
+  /* ============ UNDER THE HOOD ============ */
+  .uth-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr 1fr;
+    gap: 28px;
+    margin-top: 48px;
+    align-items: start;
+  }
+  .uth-sidebar {
+    position: relative;
+    padding-left: 24px;
+    border-left: 1.5px solid var(--border);
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .uth-tab {
+    display: block;
+    padding: 16px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s ease;
+    background: none;
+    border: none;
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+  }
+  .uth-tab:hover { color: var(--text-dark); }
+  .uth-tab.active { color: var(--text-dark); }
+  .uth-tab.active::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(106,108,214,0.15);
+  }
+  .uth-panel {
+    border-radius: 20px;
+    padding: 36px 32px 32px;
+    position: relative;
+    overflow: hidden;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+  }
+  .uth-panel-light {
+    background: var(--bg-neutral);
+  }
+  .uth-panel-dark {
+    background: var(--bg-dark);
+    color: #fff;
+    isolation: isolate;
+  }
+  .uth-panel-dark > *:not(.hero-blur-bg) { position: relative; z-index: 2; }
+  .uth-mock-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    min-height: 320px;
+    position: relative;
+  }
+  .uth-panel h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .uth-panel p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: var(--text-body);
+  }
+  .uth-panel-dark h3 { color: #fff; }
+  .uth-panel-dark p { color: rgba(255,255,255,0.7); }
+  .uth-panel .learn-link {
+    color: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: auto;
+  }
+  /* SERP analysis mockup (light panel) */
+  .uth-serp-card {
+    background: #e8edff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    max-width: 340px;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(40,50,90,0.08);
+  }
+  .uth-serp-card .serp-chip {
+    display: inline-block;
+    background: rgba(106,108,214,0.18);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  .uth-serp-card .serp-text {
+    font-size: 13px;
+    line-height: 1.45;
+    color: #2a2f4a;
+  }
+  .uth-magnifier {
+    position: absolute;
+    right: -28px;
+    bottom: -38px;
+    width: 110px;
+    height: 110px;
+  }
+  /* Dashboard mockup (dark panel) */
+  .uth-dash-top {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px 20px;
+    box-shadow: 0 20px 48px rgba(0,0,0,0.35);
+    margin-bottom: 14px;
+    color: var(--text-dark);
+    position: relative;
+    overflow: visible;
+  }
+  .uth-dash-top .dash-row1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .uth-dash-top .dash-score {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .uth-dash-top .dash-pill-good {
+    background: #d9f5e3;
+    color: #167a3a;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .uth-dash-top .dash-avg {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .uth-dash-top .dash-bar {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+  .uth-dash-top .dash-bar span {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: #19a974;
+  }
+  .uth-dash-top .dash-bar span:last-child { background: #e0e3eb; }
+  .uth-dash-top .dash-wc {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .uth-dash-top .dash-wc strong {
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-right: 6px;
+  }
+  .uth-dash-paperplane {
+    position: absolute;
+    top: -28px;
+    right: -16px;
+    width: 60px;
+    height: 60px;
+  }
+  .uth-dash-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+    background: rgba(255,255,255,0.06);
+    padding: 4px;
+    border-radius: 10px;
+    width: fit-content;
+  }
+  .uth-dash-tabs .dash-tab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    cursor: default;
+  }
+  .uth-dash-tabs .dash-tab.active {
+    background: #fff;
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+  .uth-dash-tabs .dash-tab .icon { width: 12px; height: 12px; opacity: 0.7; }
+  .uth-dash-tabs .dash-tab.active .icon { opacity: 1; }
+  .uth-dash-help {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 12px;
+    line-height: 1.45;
+  }
+  .uth-dash-headings {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: var(--text-dark);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.35);
+  }
+  .uth-dash-headings .dh-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f1f5;
+    margin-bottom: 12px;
+  }
+  .uth-dash-headings .dh-title { font-size: 13px; font-weight: 600; }
+  .uth-dash-headings .dh-count { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+  .uth-dash-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 8px 0;
+  }
+  .uth-dash-item + .uth-dash-item { border-top: 1px solid #f0f1f5; padding-top: 12px; margin-top: 4px; }
+  .uth-dash-item .it-name { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
+  .uth-dash-item .it-desc { font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
+  .uth-dash-item .it-pill-ok {
+    background: #d9f5e3; color: #167a3a;
+    font-size: 10px; font-weight: 600;
+    padding: 2px 8px; border-radius: 6px;
+    display: inline-block;
+  }
+  .uth-dash-item .it-pill-bad {
+    background: #fde2e2; color: #b3261e;
+    font-size: 10px; font-weight: 600;
+    padding: 2px 8px; border-radius: 6px;
+    display: inline-block;
+  }
+  .uth-dash-item .it-score-ok {
+    font-size: 11px; color: #19a974;
+  }
+  .uth-dash-item .it-score-bad {
+    color: #b3261e;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #b3261e;
+    display: inline-block;
+    margin-top: 6px;
+  }
+  @media (max-width: 960px) {
+    .uth-layout { grid-template-columns: 1fr; }
+    .uth-sidebar { border-left: none; padding-left: 0; display: flex; gap: 8px; overflow-x: auto; }
+    .uth-tab.active::before { display: none; }
+    .uth-tab.active { color: var(--accent); }
+    .uth-panel { min-height: 0; }
+  }
+
+  /* ============ BRAND CONTEXT ============ */
+  .brand-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+  .brand-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .brand-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: 14px;
+    color: var(--text-dark);
+  }
+  .brand-mock {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 12px 32px rgba(20,23,42,0.06);
+  }
+  .brand-mock h4 {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  .brand-mock h4 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+  .brand-mock .mock-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 13px;
+    color: var(--text-body);
+  }
+  .brand-mock .check-dot {
+    width: 16px; height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ============ SOLUTIONS GRID (dark section variant) ============ */
+  .section-dark {
+    position: relative;
+    background: var(--bg-dark);
+    color: #fff;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .section-dark > .container { position: relative; z-index: 2; }
+  .section-dark .section-title { color: #fff; }
+  .section-dark .section-subtitle { color: rgba(255,255,255,0.7); }
+  .section-dark .badge {
+    background: #ff6b35;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    position: relative;
+    z-index: 2;
+  }
+  .solution-card {
+    color: #fff;
+  }
+  .solution-mock {
+    background: #f5f6fa;
+    border-radius: 14px;
+    padding: 22px;
+    min-height: 260px;
+    margin-bottom: 24px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    overflow: hidden;
+    position: relative;
+  }
+  .solution-mock .browser-bar {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .solution-mock .browser-bar span {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #e0e3eb;
+  }
+  .solution-mock .mock-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 14px;
+    height: calc(100% - 24px);
+  }
+  .solution-mock .mock-row-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px solid #f0f1f5;
+  }
+  .solution-mock .mock-row-line:last-child { border-bottom: none; }
+  .solution-mock .mock-thumb {
+    width: 18px; height: 18px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #d0d4e0, #b8bcc8);
+    flex-shrink: 0;
+  }
+  .solution-mock .mock-text {
+    height: 6px;
+    border-radius: 3px;
+    background: #e8ebf2;
+    flex: 1;
+  }
+  .solution-mock .mock-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #f0f1f5;
+    border-radius: 999px;
+    font-size: 9px;
+    color: #878f97;
+  }
+  .solution-mock .mock-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 4px;
+  }
+  .solution-mock .mock-stat-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  .solution-mock .mock-stat-label {
+    font-size: 8px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .solution-mock .mock-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    margin-top: 8px;
+  }
+  .solution-card h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+  .solution-card p {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .solution-card .arrow {
+    margin-top: 18px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+  }
+
+  /* ============ TESTIMONIAL ============ */
+  .testimonial-section { padding: 80px 0; background: var(--bg-neutral); }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .testimonial-stat {
+    font-size: 72px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .testimonial-label {
+    margin-top: 8px;
+    color: var(--text-body);
+    font-size: 13px;
+  }
+  .testimonial-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0 12px 32px rgba(20,23,42,0.06);
+  }
+  .company-badge {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .quote {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+  }
+  .quote em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+  .author {
+    color: var(--text-body);
+    font-size: 13px;
+  }
+  .author strong { color: var(--text-dark); font-weight: 600; }
+
+  /* ============ HONEST ============ */
+  .honest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 36px;
+  }
+  .honest-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+  }
+  .honest-card .icon {
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    background: rgba(148,107,110,0.15);
+    color: var(--accent-rose);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .honest-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .honest-card p {
+    color: var(--text-body);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .honest-card .learn-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* ============ PRICING ============ */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .pricing-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .pricing-card.featured {
+    background: var(--bg-dark);
+    color: #fff;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .pricing-card.featured > *:not(.hero-blur-bg) { position: relative; z-index: 2; }
+  .pricing-card h3 {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .pricing-card.featured h3 { color: rgba(255,255,255,0.7); }
+  .pricing-amount {
+    font-size: 42px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  .pricing-amount span {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+  .pricing-card.featured .pricing-amount span { color: rgba(255,255,255,0.6); }
+  .pricing-desc {
+    color: var(--text-body);
+    font-size: 13px;
+    margin: 12px 0 20px;
+    min-height: 36px;
+    position: relative;
+  }
+  .pricing-card.featured .pricing-desc { color: rgba(255,255,255,0.7); }
+  .pricing-features {
+    list-style: none;
+    margin: 20px 0;
+    position: relative;
+  }
+  .pricing-features li {
+    padding: 8px 0;
+    font-size: 13px;
+    color: var(--text-body);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pricing-features li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.8); }
+  .pricing-card .btn {
+    width: 100%;
+    margin-top: 12px;
+    position: relative;
+  }
+
+  /* ============ FAQ ============ */
+  .faq-list {
+    max-width: 760px;
+    margin: 40px auto 0;
+  }
+  .faq-item {
+    border-top: 1px solid var(--border);
+    padding: 20px 0;
+    cursor: pointer;
+  }
+  .faq-item:last-child { border-bottom: 1px solid var(--border); }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .faq-q::after {
+    content: '+';
+    font-size: 22px;
+    color: var(--text-muted);
+    font-weight: 300;
+    transition: transform 0.2s;
+  }
+  .faq-item.open .faq-q::after { content: '−'; }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    color: var(--text-body);
+    font-size: 14px;
+    transition: max-height 0.3s ease, padding-top 0.3s ease;
+    padding-top: 0;
+  }
+  .faq-item.open .faq-a {
+    max-height: 200px;
+    padding-top: 12px;
+  }
+  .faq-help {
+    text-align: center;
+    margin-top: 48px;
+    padding: 24px;
+    border-radius: 14px;
+    background: var(--bg-neutral);
+  }
+  .faq-help .avatars { justify-content: center; margin: 12px auto; }
+
+  /* ============ FINAL CTA ============ */
+  .final-cta {
+    position: relative;
+    background: var(--bg-dark);
+    color: #fff;
+    padding: 100px 0;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .final-cta > .container { position: relative; z-index: 2; }
+  .final-cta-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
+    min-height: 540px;
+  }
+  .final-cta-text { padding: 12px 0; }
+  .final-cta h2 {
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin: 16px 0 20px;
+    position: relative;
+  }
+  .final-cta h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .final-cta p {
+    color: rgba(255,255,255,0.7);
+    max-width: 480px;
+    margin: 0 0 28px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .final-cta .badge {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.9);
+    position: relative;
+  }
+  .final-cta .btn { position: relative; }
+
+  /* Browser-window mockup */
+  .cta-browser {
+    position: relative;
+    background: #fff;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.06);
+    margin-left: -120px;
+    margin-bottom: -40px;
+    overflow: hidden;
+  }
+  .cta-browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid #f0f1f5;
+  }
+  .cta-browser-bar .url {
+    flex: 1;
+    background: #f3f4f8;
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cta-browser-bar .url::before {
+    content: '🔒';
+    font-size: 10px;
+  }
+  .cta-browser-bar .icons {
+    display: flex;
+    gap: 6px;
+  }
+  .cta-browser-bar .icons span {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    border: 1px solid #e8ebf2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .cta-browser-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 460px;
+  }
+  .cta-editor-pane {
+    padding: 18px 16px;
+    border-right: 1px solid #f0f1f5;
+    background: #fafbff;
+  }
+  .cta-editor-toolbar {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e8ebf2;
+    margin-bottom: 12px;
+  }
+  .cta-editor-toolbar span {
+    width: 18px; height: 18px;
+    border-radius: 4px;
+    background: #e8ebf2;
+    display: inline-block;
+  }
+  .cta-editor-toolbar .codeview {
+    background: #fff;
+    border: 1px solid #e0e3eb;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 10px;
+    color: var(--text-body);
+    width: auto;
+    height: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+  }
+  .cta-editor-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 11px;
+    color: var(--text-body);
+    line-height: 1.5;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .cta-editor-content .editor-line { margin-bottom: 6px; color: var(--text-muted); }
+  .cta-editor-img {
+    margin: 10px 0;
+    height: 90px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #e8d4c8, #c9a18f);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-editor-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.4), transparent 60%);
+  }
+  .cta-editor-h2 { font-size: 13px; font-weight: 700; color: var(--text-dark); margin: 8px 0 6px; }
+  .cta-editor-p { font-size: 10px; color: var(--text-body); line-height: 1.5; margin-bottom: 6px; }
+  .cta-score-pane {
+    padding: 18px 16px;
+    background: #fff;
+  }
+  .cta-score-export {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 14px;
+  }
+  .cta-export-btn {
+    background: var(--accent);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .cta-score-head { margin-bottom: 14px; }
+  .cta-score-head .row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .cta-score-head .big { font-size: 22px; font-weight: 600; color: var(--text-dark); }
+  .cta-score-head .avg { font-size: 10px; color: var(--text-muted); }
+  .cta-score-head .good {
+    background: #d9f5e3; color: #167a3a;
+    font-size: 10px; font-weight: 600;
+    padding: 2px 8px; border-radius: 999px;
+  }
+  .cta-score-bar { display: flex; gap: 3px; margin-bottom: 10px; }
+  .cta-score-bar span { flex: 1; height: 6px; border-radius: 3px; background: #19a974; }
+  .cta-score-wc { font-size: 10px; color: var(--text-muted); margin-bottom: 14px; }
+  .cta-score-wc strong { color: var(--text-dark); margin-right: 4px; font-weight: 600; }
+  .cta-score-tabs {
+    display: flex;
+    gap: 4px;
+    background: #f5f6fa;
+    padding: 3px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+  }
+  .cta-score-tabs .t {
+    flex: 1;
+    text-align: center;
+    padding: 4px 6px;
+    font-size: 10px;
+    color: var(--text-muted);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center; gap: 4px;
+  }
+  .cta-score-tabs .t.active {
+    background: #fff;
+    color: var(--accent);
+    font-weight: 600;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+  .cta-score-card {
+    border: 1px solid #f0f1f5;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+  }
+  .cta-score-card .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .cta-score-card .title { font-size: 11px; font-weight: 600; color: var(--text-dark); }
+  .cta-score-card .count {
+    font-size: 10px;
+    color: #ff9a4a;
+    background: #fff4e6;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  .cta-score-card .item { font-size: 10px; padding: 4px 0; border-top: 1px solid #f5f6fa; display: flex; justify-content: space-between; }
+  .cta-score-card .item:first-of-type { border-top: none; }
+  .cta-score-card .item-name { color: var(--text-dark); font-weight: 600; }
+  .cta-score-card .item-desc { color: var(--text-muted); font-size: 9px; margin-top: 2px; }
+  .cta-score-card .pts {
+    background: #d9f5e3; color: #167a3a;
+    padding: 1px 6px; border-radius: 4px; font-weight: 600; font-size: 9px;
+  }
+  .cta-score-card .ratio { font-size: 10px; color: #19a974; font-weight: 500; }
+  .cta-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #f0f1f5;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    font-size: 11px;
+  }
+  .cta-collapse .label { color: var(--text-dark); font-weight: 600; }
+  .cta-collapse .right { color: var(--text-muted); display: flex; gap: 8px; align-items: center; }
+  .cta-collapse .ok { background: #d9f5e3; color: #167a3a; padding: 2px 6px; border-radius: 4px; font-size: 9px; font-weight: 600; }
+  .cta-collapse .bad { background: #fde2e2; color: #b3261e; padding: 2px 6px; border-radius: 4px; font-size: 9px; font-weight: 600; }
+
+  @media (max-width: 960px) {
+    .final-cta-grid { grid-template-columns: 1fr; }
+    .cta-browser { margin-left: 0; margin-bottom: 0; }
+    .cta-browser-body { grid-template-columns: 1fr; }
+    .cta-editor-pane { border-right: none; border-bottom: 1px solid #f0f1f5; }
+  }
+
+  /* ============ FOOTER ============ */
+  .footer_component {
+    background: #fff;
+    padding: 60px 0 24px;
+    border-top: 1px solid var(--border);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .footer_title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+  }
+  .footer_nav-column ul { list-style: none; }
+  .footer_nav-column li { padding: 6px 0; }
+  .footer_nav-column a {
+    color: var(--text-body);
+    font-size: 13px;
+  }
+  .footer_nav-column a:hover { color: var(--accent); }
+  .footer-brand .brand-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+  .footer-brand .brand-name svg { width: 26px; height: 26px; }
+  .footer-brand p {
+    color: var(--text-body);
+    font-size: 13px;
+    max-width: 240px;
+    line-height: 1.55;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .footer-socials a {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: var(--bg-neutral);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: var(--text-body);
+  }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-bottom-links { display: flex; gap: 18px; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 960px) {
+    .nav-menu { display: none; }
+    .split-grid, .brand-grid, .testimonial-grid { grid-template-columns: 1fr; }
+    .benefits-grid { grid-template-columns: 1fr 1fr; }
+    .solutions-grid, .honest-grid, .pricing-grid { grid-template-columns: 1fr; }
+    .feature-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .section { padding: 64px 0; }
+  }
+  @media (max-width: 540px) {
+    .benefits-grid { grid-template-columns: 1fr; }
+    .testimonial-stat { font-size: 52px; }
+  }
+
+  /* ============ SCROLL REVEAL ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Stagger children inside a .reveal-group */
+  .reveal-group .reveal { transition-delay: 0s; }
+  .reveal-group.is-visible .reveal:nth-child(1) { transition-delay: 0.05s; }
+  .reveal-group.is-visible .reveal:nth-child(2) { transition-delay: 0.15s; }
+  .reveal-group.is-visible .reveal:nth-child(3) { transition-delay: 0.25s; }
+  .reveal-group.is-visible .reveal:nth-child(4) { transition-delay: 0.35s; }
+  .reveal-group.is-visible .reveal:nth-child(5) { transition-delay: 0.45s; }
+  .reveal-group.is-visible .reveal:nth-child(6) { transition-delay: 0.55s; }
+  /* Variants */
+  .reveal.reveal-left { transform: translateX(-40px); }
+  .reveal.reveal-right { transform: translateX(40px); }
+  .reveal.reveal-left.is-visible,
+  .reveal.reveal-right.is-visible { transform: translateX(0); }
+  .reveal.reveal-scale { transform: scale(0.95); }
+  .reveal.reveal-scale.is-visible { transform: scale(1); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Banner -->
+  <div class="banner_wrap">
+    Black Friday Offer | Try Blym, 20% off for life 🔥
+    <a href="#pricing">Start with Blym</a>
+  </div>
+
+  <!-- Nav -->
+  <header class="navbar">
+    <div class="nav_inner">
+      <a href="#" class="nav-brand">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#6A6CD6" fill-rule="evenodd" d="M 17 28 L 47 7 Q 50 5 53 7 L 83 28 Q 86 30 86 33 L 86 67 Q 86 70 83 72 L 53 93 Q 50 95 47 93 L 17 72 Q 14 70 14 67 L 14 33 Q 14 30 17 28 Z M 50 30 Q 50 50 70 50 Q 50 50 50 70 Q 50 50 30 50 Q 50 50 50 30 Z"/>
+        </svg>
+        blym
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">Success Stories</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#" class="btn btn-ghost">Sign in</a>
+        <a href="#" class="btn btn-primary">Start for free</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hp-hero_wrap">
+    <div class="container home-hero_contain">
+      <div class="hero-badge">BUILT BY <strong>BLOGGLE</strong></div>
+      <h1 class="hero-title">Rank on Google.<br>Get <em>cited by AI.</em></h1>
+      <p class="hero-subtitle">Blym is the SEO and GEO content platform that guides you from keyword research to published article. End to end. No guesswork. No generic AI output.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-primary">Start for free →</a>
+        <a href="#" class="btn btn-secondary">Book a demo</a>
+      </div>
+      <div class="hero-reviews">
+        <div class="avatars"><div></div><div></div><div></div></div>
+        <div class="stars">★★★★★</div>
+        <div><strong style="color:var(--text-dark);">4.8/5</strong> · 610+ Reviews</div>
+      </div>
+
+      <!-- Hero Video Wrap — animated blur sits in the padding around the video -->
+      <div class="hero_video_wrap">
+        <div class="hero-blur-bg">
+          <div class="blur blur-1"></div>
+          <div class="blur blur-2"></div>
+          <div class="blur blur-3"></div>
+          <div class="blur blur-4"></div>
+          <div class="blur blur-5"></div>
+          <div class="blur blur-6"></div>
+        </div>
+        <div class="hero_video_asset">
+          <iframe
+            src="https://www.youtube.com/embed/TkwQoktzxzA?rel=0"
+            title="Blym AI - Product Tour"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client logos (light background continues from hero) -->
+  <div style="background:#fff; padding:48px 0; border-top:1px solid var(--border);">
+    <div class="container">
+      <div class="logos-header" style="text-align:center;">Built by the Bloggle team. Used by 6,000+ companies in 70 countries.</div>
+      <div style="display:flex; align-items:center; justify-content:space-around; flex-wrap:wrap; gap:32px; opacity:0.55; font-weight:600; color:var(--text-dark); font-size:14px;">
+        <div>Yes Origin</div>
+        <div style="font-style:italic; font-family:'Cormorant Garamond';">BLUE Magazine</div>
+        <div>NUVO</div>
+        <div>3CO</div>
+        <div>Bloggle</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Split -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="split-grid">
+        <div>
+          <div class="badge">The split</div>
+          <h2 class="section-title">Search just split in two.</h2>
+          <ul class="check-list">
+            <li>Half your buyers Google. The other half ask AI engines.</li>
+            <li>Most tools were built for the old world. Not for AI engines.</li>
+            <li>Blym covers both sides of search, by design.</li>
+          </ul>
+        </div>
+        <div class="split-visual">
+          <div class="mock-card">
+            <div style="font-size:11px; color:var(--text-muted); margin-bottom:8px;">Google SERP</div>
+            <div class="mock-line"></div>
+            <div class="mock-line medium"></div>
+            <div class="mock-line short"></div>
+            <div class="mock-line medium"></div>
+          </div>
+          <div class="mock-card">
+            <div style="font-size:11px; color:var(--text-muted); margin-bottom:8px;">AI answer</div>
+            <div class="mock-line short"></div>
+            <div class="mock-line"></div>
+            <div class="mock-line medium"></div>
+            <div class="mock-line short"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Step Workflow -->
+  <section class="section section-light" style="padding-top:0;">
+    <div class="container">
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">01</div>
+          <h3>Audit</h3>
+          <p>Stop writing content in the dark. Blym scans your site and your market, then hands you the ranked list of keyword opportunities that actually matter.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">02</div>
+          <h3>Action Plan</h3>
+          <p>Blym turns your Audit into a 3-month roadmap, auto-prioritized by impact, with expected traffic and leads shown for every task.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">03</div>
+          <h3>Write</h3>
+          <p>Brief Blym in the time you'd spend briefing a freelancer. Get a full article back, written against your expertise, your brand, and real search data.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">04</div>
+          <h3>Publish</h3>
+          <p>Push to Bloggle, Shopify, or WordPress. Or export to Google Docs, HTML, or Markdown. No reformatting. No copy paste.</p>
+        </div>
+        <div class="benefit-card dark">
+          <div class="hero-blur-bg compact">
+            <div class="blur blur-1"></div>
+            <div class="blur blur-2"></div>
+            <div class="blur blur-3"></div>
+            <div class="blur blur-4"></div>
+            <div class="blur blur-5"></div>
+            <div class="blur blur-6"></div>
+          </div>
+          <h3>All your SEO. One workflow.</h3>
+          <p>End-to-end content production, powered by real data.</p>
+          <a href="#" class="btn btn-primary" style="font-size:13px;">Start for free</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Under the Hood -->
+  <section class="section section-neutral">
+    <div class="container">
+      <div class="section-header center" style="max-width:680px;">
+        <div class="badge">Under the hood</div>
+        <h2 class="section-title">Every article starts from <em>real data.</em><br>Not from a guess.</h2>
+        <p class="section-subtitle">Ask ChatGPT to research your topic and you get a summary of what it already knows. Blym pulls live Google SERP data and cross-references OpenAI, Claude, Gemini, and Perplexity to show you what is actually getting cited right now.</p>
+      </div>
+      <div class="uth-layout">
+        <div class="uth-sidebar">
+          <button class="uth-tab active" data-uth-tab="serp">Real SERP data</button>
+          <button class="uth-tab" data-uth-tab="llm">Cross LLM analysis</button>
+          <button class="uth-tab" data-uth-tab="brand">Brand Context</button>
+        </div>
+
+        <!-- Light panel -->
+        <div class="uth-panel uth-panel-light">
+          <div class="uth-mock-area">
+            <div class="uth-serp-card">
+              <span class="serp-chip">SERP Analysis</span>
+              <div class="serp-text">The user is trying to understand whether a magnesium supplement can improve sleep, reduce stress, and support muscle health.</div>
+              <svg class="uth-magnifier" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="mag-gloss" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#a3a6e8"/>
+                    <stop offset="100%" stop-color="#5c5ea8"/>
+                  </linearGradient>
+                  <linearGradient id="mag-handle" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#ff9a6a"/>
+                    <stop offset="100%" stop-color="#d35a32"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="44" cy="44" r="28" fill="#dfe2ff" stroke="url(#mag-gloss)" stroke-width="6"/>
+                <circle cx="44" cy="44" r="20" fill="rgba(255,255,255,0.4)"/>
+                <rect x="62" y="62" width="42" height="12" rx="6" transform="rotate(45 62 62)" fill="url(#mag-handle)"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Real SERP data</h3>
+          <p>Live Google results, competitor structure, People Also Ask, featured snippets.</p>
+          <a href="#" class="learn-link">Learn more →</a>
+        </div>
+
+        <!-- Dark panel with animated blur -->
+        <div class="uth-panel uth-panel-dark">
+          <div class="hero-blur-bg compact">
+            <div class="blur blur-1"></div>
+            <div class="blur blur-2"></div>
+            <div class="blur blur-3"></div>
+            <div class="blur blur-4"></div>
+            <div class="blur blur-5"></div>
+            <div class="blur blur-6"></div>
+          </div>
+          <div class="uth-mock-area" style="flex-direction:column; align-items:stretch; justify-content:flex-start;">
+            <div class="uth-dash-top">
+              <div class="dash-row1">
+                <div class="dash-score">
+                  99/100 <span class="dash-pill-good">Good</span>
+                </div>
+                <div class="dash-avg">Avg: 56-65</div>
+              </div>
+              <div class="dash-bar"><span></span><span></span><span></span></div>
+              <div class="dash-wc"><strong>Word count: 230</strong>Avg: 2300-2800</div>
+              <svg class="uth-dash-paperplane" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="plane1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#6A6CD6"/>
+                    <stop offset="100%" stop-color="#937EA5"/>
+                  </linearGradient>
+                  <linearGradient id="plane2" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#ff8a5b"/>
+                    <stop offset="100%" stop-color="#d35a32"/>
+                  </linearGradient>
+                </defs>
+                <polygon points="6,30 56,8 38,34" fill="url(#plane1)"/>
+                <polygon points="6,30 56,8 28,44" fill="url(#plane2)" opacity="0.8"/>
+              </svg>
+            </div>
+            <div class="uth-dash-tabs">
+              <div class="dash-tab active">
+                <svg class="icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 1l2 4 4 .5-3 3 .8 4.5L8 11l-3.8 2L5 8.5 2 5.5l4-.5z" fill="#6A6CD6"/></svg>
+                Score
+              </div>
+              <div class="dash-tab">
+                <svg class="icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="12" height="2" fill="currentColor"/><rect x="2" y="7" width="9" height="2" fill="currentColor"/><rect x="2" y="11" width="11" height="2" fill="currentColor"/></svg>
+                Terms
+              </div>
+              <div class="dash-tab">
+                <svg class="icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 8h12M8 2c2 2 2 10 0 12M8 2c-2 2-2 10 0 12" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+                SERP
+              </div>
+              <div class="dash-tab">
+                <svg class="icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><polygon points="8,2 14,14 8,11 2,14" fill="currentColor"/></svg>
+                GEO
+              </div>
+            </div>
+            <div class="uth-dash-help">The more tasks you finish the better score your content will have.</div>
+            <div class="uth-dash-headings">
+              <div class="dh-head">
+                <div class="dh-title">Headings</div>
+                <div class="dh-count">19/25 <span style="transform:rotate(180deg); display:inline-block;">›</span></div>
+              </div>
+              <div class="uth-dash-item">
+                <div>
+                  <div class="it-name">One h1 in the content</div>
+                  <div class="it-desc">Perfect! Your heading structure is correct</div>
+                  <span class="it-pill-ok">5/5 pts</span>
+                </div>
+                <div class="it-score-ok">1/1</div>
+              </div>
+              <div class="uth-dash-item">
+                <div>
+                  <div class="it-name">Missing target keyword in h1</div>
+                  <div class="it-desc">Add the target keyword to the H1 heading</div>
+                  <span class="it-pill-bad">0/5 pts</span>
+                </div>
+                <div><span class="it-score-bad"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Context -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="brand-grid">
+        <div>
+          <div class="badge">Brand Context</div>
+          <h2 class="section-title">Sounds like your brand. Not like <em>ChatGPT.</em></h2>
+          <p class="section-subtitle">The soul of your brand lives in your head. Getting it onto the page consistently is the hardest part of scaling content. Tell Blym who you are once: your offers, your personas, your tone, the words you use, the words you never use.</p>
+          <div class="brand-features">
+            <div class="brand-card">✓ Tone and writing style profile</div>
+            <div class="brand-card">✓ Voice examples from your existing content</div>
+            <div class="brand-card">✓ Personas and positioning</div>
+            <div class="brand-card">✓ Blacklisted keywords and phrases</div>
+          </div>
+          <a href="#" class="btn btn-primary" style="margin-top:24px;">See how Brand Context works →</a>
+        </div>
+        <div class="brand-mock">
+          <h4>Sounds like your brand. Not like <em>ChatGPT.</em></h4>
+          <div class="mock-row"><div class="check-dot"></div>Onboard with your brand</div>
+          <div class="mock-row"><div class="check-dot"></div>Train against your tone of voice</div>
+          <div class="mock-row"><div class="check-dot"></div>Match positioning & personas</div>
+          <div class="mock-row"><div class="check-dot"></div>Avoid blacklisted phrases</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Grid -->
+  <section class="section section-dark">
+    <div class="hero-blur-bg wide">
+      <div class="blur blur-1"></div>
+      <div class="blur blur-2"></div>
+      <div class="blur blur-3"></div>
+      <div class="blur blur-4"></div>
+      <div class="blur blur-5"></div>
+      <div class="blur blur-6"></div>
+    </div>
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="badge">Solutions</div>
+        <h2 class="section-title">Whatever you sell, <em>wherever</em> you sell it.</h2>
+        <p class="section-subtitle">Built for how your team actually works. Pick the path that fits, Blym handles the rest.</p>
+      </div>
+      <div class="solutions-grid">
+        <div class="solution-card reveal">
+          <div class="solution-mock">
+            <div class="browser-bar">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="mock-content">
+              <div class="mock-row-line">
+                <div class="mock-thumb"></div>
+                <div class="mock-text" style="flex:2"></div>
+                <div class="mock-pill">Product</div>
+              </div>
+              <div class="mock-row-line">
+                <div class="mock-thumb"></div>
+                <div class="mock-text" style="flex:2.4"></div>
+                <div class="mock-pill">Collection</div>
+              </div>
+              <div class="mock-row-line">
+                <div class="mock-thumb"></div>
+                <div class="mock-text" style="flex:1.8"></div>
+                <div class="mock-pill">Guide</div>
+              </div>
+              <div class="mock-row-line">
+                <div class="mock-thumb"></div>
+                <div class="mock-text" style="flex:2.2"></div>
+                <div class="mock-pill">Product</div>
+              </div>
+              <div class="mock-row-line">
+                <div class="mock-thumb"></div>
+                <div class="mock-text" style="flex:2"></div>
+                <div class="mock-pill">Compare</div>
+              </div>
+              <div class="mock-row-line">
+                <div class="mock-thumb"></div>
+                <div class="mock-text" style="flex:1.6"></div>
+                <div class="mock-pill">Guide</div>
+              </div>
+            </div>
+          </div>
+          <h3>Ecommerce</h3>
+          <p>Product pages, collection pages, buying guides, at scale, on brand, with the SEO structure Google expects and the answer structure AI engines pull from.</p>
+          <div class="arrow">For Ecommerce →</div>
+        </div>
+        <div class="solution-card reveal">
+          <div class="solution-mock">
+            <div class="browser-bar">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="mock-content" style="display:flex; flex-direction:column; gap:10px;">
+              <div style="font-size:11px; font-weight:600; color:#878f97; letter-spacing:0.04em; text-transform:uppercase;">Choose a content type</div>
+              <div style="border:1.5px solid var(--accent); border-radius:8px; padding:10px; display:flex; align-items:center; gap:8px; background:#f5f6ff;">
+                <div style="width:14px; height:14px; border-radius:50%; background:var(--accent);"></div>
+                <div style="font-size:12px; font-weight:600; color:var(--text-dark);">Listicle</div>
+              </div>
+              <div style="border:1px solid #e8ebf2; border-radius:8px; padding:10px; display:flex; align-items:center; gap:8px;">
+                <div style="width:14px; height:14px; border-radius:50%; background:#e0e3eb;"></div>
+                <div style="font-size:12px; color:#878f97;">vs. Pages</div>
+              </div>
+              <div style="border:1px solid #e8ebf2; border-radius:8px; padding:10px; display:flex; align-items:center; gap:8px;">
+                <div style="width:14px; height:14px; border-radius:50%; background:#e0e3eb;"></div>
+                <div style="font-size:12px; color:#878f97;">Alternative pages</div>
+              </div>
+              <div style="border:1px solid #e8ebf2; border-radius:8px; padding:10px; display:flex; align-items:center; gap:8px;">
+                <div style="width:14px; height:14px; border-radius:50%; background:#e0e3eb;"></div>
+                <div style="font-size:12px; color:#878f97;">Industry deep dives</div>
+              </div>
+            </div>
+          </div>
+          <h3>SaaS and Services</h3>
+          <p>Listicles, vs. pages, alternative pages, industry deep dives. Rank for the queries that actually convert.</p>
+          <div class="arrow">For SaaS and Services →</div>
+        </div>
+        <div class="solution-card reveal">
+          <div class="solution-mock">
+            <div class="browser-bar">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="mock-content">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                <div style="font-size:11px; font-weight:600; color:var(--text-dark);">SEO Audit</div>
+                <div style="font-size:10px; color:#19a974; font-weight:600;">+12%</div>
+              </div>
+              <div style="display:flex; align-items:flex-end; gap:4px; height:50px; margin-bottom:12px;">
+                <div style="flex:1; background:linear-gradient(180deg, var(--accent), var(--accent-purple)); border-radius:3px; height:40%;"></div>
+                <div style="flex:1; background:linear-gradient(180deg, var(--accent), var(--accent-purple)); border-radius:3px; height:55%;"></div>
+                <div style="flex:1; background:linear-gradient(180deg, var(--accent), var(--accent-purple)); border-radius:3px; height:35%;"></div>
+                <div style="flex:1; background:linear-gradient(180deg, var(--accent), var(--accent-purple)); border-radius:3px; height:70%;"></div>
+                <div style="flex:1; background:linear-gradient(180deg, var(--accent), var(--accent-purple)); border-radius:3px; height:60%;"></div>
+                <div style="flex:1; background:linear-gradient(180deg, var(--accent), var(--accent-purple)); border-radius:3px; height:85%;"></div>
+                <div style="flex:1; background:linear-gradient(180deg, var(--accent), var(--accent-purple)); border-radius:3px; height:75%;"></div>
+                <div style="flex:1; background:linear-gradient(180deg, var(--accent), var(--accent-purple)); border-radius:3px; height:95%;"></div>
+              </div>
+              <div class="mock-stat-grid">
+                <div class="mock-stat">
+                  <div class="mock-stat-value">142</div>
+                  <div class="mock-stat-label">Keywords</div>
+                </div>
+                <div class="mock-stat">
+                  <div class="mock-stat-value">87</div>
+                  <div class="mock-stat-label">Pages</div>
+                </div>
+                <div class="mock-stat">
+                  <div class="mock-stat-value">4.2</div>
+                  <div class="mock-stat-label">Avg pos</div>
+                </div>
+                <div class="mock-stat">
+                  <div class="mock-stat-value">98%</div>
+                  <div class="mock-stat-label">Score</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>Solopreneurs and small teams</h3>
+          <p>Own your SEO without hiring an agency. Blym handles the strategy layer so you can focus on your business.</p>
+          <div class="arrow">For Solopreneurs →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="testimonial-section">
+    <div class="container">
+      <div class="testimonial-grid">
+        <div>
+          <div class="testimonial-stat">70%</div>
+          <div class="testimonial-label">less content production time</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="company-badge">EXPLORADOR</div>
+          <p class="quote"><em>"We switched from a bulky legacy CRM to GoLive and immediately saw reps actually using it. It's intuitive, fast, and has made our pipeline reviews 10x clearer."</em></p>
+          <div class="author"><strong>Côme Filippi</strong> · CEO, Explorador</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Honest -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header center">
+        <div class="badge">Honest</div>
+        <h2 class="section-title">Blym <em>isn't for everyone.</em> And that's on purpose.</h2>
+        <p class="section-subtitle">Most content tools promise the world and deliver a chatbot with a word count. We'd rather tell you upfront what we don't do.</p>
+      </div>
+      <div class="honest-grid">
+        <div class="honest-card">
+          <div class="icon">✕</div>
+          <h3>Not another generic AI writer.</h3>
+          <p>If you want 1,000 thin articles by Friday with zero human input, there are cheaper tools. Blym is for teams that care what gets published under their name.</p>
+          <a href="#" class="learn-link">Learn more →</a>
+        </div>
+        <div class="honest-card">
+          <div class="icon">✕</div>
+          <h3>Not a bloated SEO suite.</h3>
+          <p>Surfer, Semrush, and Ahrefs are powerful. They're also complex tools where most teams use 10% of the features and still wrestle with the other 90%. Blym covers the part that actually drives content performance.</p>
+          <a href="#" class="learn-link">Learn more →</a>
+        </div>
+        <div class="honest-card">
+          <div class="icon">✕</div>
+          <h3>Not an industry expert for you.</h3>
+          <p>If you have nothing to say in your space, no tool will save you. The key in 2026 is credibility and point of view. Blym is built to turn your expertise into SEO and GEO content.</p>
+          <a href="#" class="learn-link">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section section-neutral" id="pricing">
+    <div class="container">
+      <div class="section-header center">
+        <div class="badge">Pricing</div>
+        <h2 class="section-title">Pricing that scales with <em>what you ship.</em></h2>
+        <p class="section-subtitle">Start at €59/month. No per seat pricing. No "contact us" tier.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <div class="pricing-amount">€59 <span>/ month</span></div>
+          <p class="pricing-desc">For small teams and refresh first use cases.</p>
+          <ul class="pricing-features">
+            <li>Audit + Writer</li>
+            <li>20 articles per month</li>
+            <li>1 Brand Context</li>
+            <li>All exports + integrations</li>
+          </ul>
+          <a href="#" class="btn btn-dark">Start for free</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Growth</h3>
+          <div class="pricing-amount">€99 <span>/ month</span></div>
+          <p class="pricing-desc">For startups producing content every week.</p>
+          <ul class="pricing-features">
+            <li>Everything in Starter</li>
+            <li>50 articles per month</li>
+            <li>3 Brand Contexts</li>
+            <li>Refresh feature included</li>
+          </ul>
+          <a href="#" class="btn btn-dark">Start for free</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="hero-blur-bg compact">
+            <div class="blur blur-1"></div>
+            <div class="blur blur-2"></div>
+            <div class="blur blur-3"></div>
+            <div class="blur blur-4"></div>
+            <div class="blur blur-5"></div>
+            <div class="blur blur-6"></div>
+          </div>
+          <h3>Enterprise</h3>
+          <div class="pricing-amount">€159 <span>/ month</span></div>
+          <p class="pricing-desc">For large teams and SEO agencies managing multiple brands.</p>
+          <ul class="pricing-features">
+            <li>Everything in Growth</li>
+            <li>Unlimited articles</li>
+            <li>Unlimited Brand Contexts</li>
+            <li>Multi-brand management</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Book a demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header center">
+        <div class="badge">FAQ</div>
+        <h2 class="section-title">Honest answers to the questions <em>we get most.</em></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">What is your platform, and how can it benefit my SaaS team?</div>
+          <div class="faq-a">Our platform is a comprehensive workspace designed to eliminate the inefficiencies of switching between multiple tools. By centralizing your workflows, it reduces manual tasks, enhances collaboration, and streamlines your operations.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">Which tools and applications does your platform integrate with?</div>
+          <div class="faq-a">Blym integrates with Bloggle, Shopify, WordPress, Google Docs, HTML, and Markdown exports. We handle the SEO and GEO layer end-to-end.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">Is technical expertise required to set up and use your platform?</div>
+          <div class="faq-a">No. Blym supports content creation in multiple languages, tuned to local SERPs. If you are an SEO expert, you'll appreciate the level of control we expose at every step.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">Can your platform scale with my growing business needs?</div>
+          <div class="faq-a">Yes. The Refresh feature spots articles that have lost rankings and rewrites them automatically, for Google and AI citations.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">What kind of customer support do you offer?</div>
+          <div class="faq-a">Through Brand Context, a setup where you define your tone, offers, personas, and style. Every piece of content is generated with that context injected, not patched on afterwards.</div>
+        </div>
+      </div>
+      <div class="faq-help">
+        <div class="avatars"><div></div><div></div><div></div></div>
+        <p style="margin:8px 0; font-size:14px;"><strong>Have more questions?</strong> Contact our support team</p>
+        <a href="#" class="btn btn-dark" style="margin-top:8px;">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="hero-blur-bg wide">
+      <div class="blur blur-1"></div>
+      <div class="blur blur-2"></div>
+      <div class="blur blur-3"></div>
+      <div class="blur blur-4"></div>
+      <div class="blur blur-5"></div>
+      <div class="blur blur-6"></div>
+    </div>
+    <div class="container">
+      <div class="final-cta-grid">
+        <!-- Browser-window mockup -->
+        <div class="cta-browser">
+          <div class="cta-browser-bar">
+            <div class="url">https://app.blym.co/</div>
+            <div class="icons">
+              <span>↻</span><span>↓</span><span>+</span><span>⎘</span>
+            </div>
+          </div>
+          <div class="cta-browser-body">
+            <!-- Editor pane -->
+            <div class="cta-editor-pane">
+              <div class="cta-editor-toolbar">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+                <div class="codeview">&lt;/&gt; Codeview</div>
+              </div>
+              <div class="cta-editor-content">
+                <div class="editor-line">If you've been waking with muscle cramps, your body might be telling you it's low on...</div>
+                <div class="cta-editor-img"></div>
+                <div class="cta-editor-h2">At a Glance</div>
+                <div class="cta-editor-p">It plays a wide range of bodily functions, yet many people don't get enough. From soothing muscle tension and supporting your mental wellbeing, magnesium plays a powerful role in your daily health. If you're feeling run down, with muscle cramps, magnesium might be the missing piece of your wellness routine.</div>
+                <div class="cta-editor-h2">Why You Need It?</div>
+                <div class="cta-editor-p">Magnesium supports over 300 reactions in the human body. It helps regulate muscle and nerve function, blood sugar levels, and energy production. Without enough, your body can't function optimally — which is why even mild deficiency can show as fatigue, tension, and restlessness.</div>
+              </div>
+            </div>
+            <!-- Score pane -->
+            <div class="cta-score-pane">
+              <div class="cta-score-export">
+                <span class="cta-export-btn">Export</span>
+              </div>
+              <div class="cta-score-head">
+                <div class="row">
+                  <div class="big">99/100</div>
+                  <div class="avg">Avg:56</div>
+                  <span class="good">Good</span>
+                </div>
+                <div class="cta-score-bar"><span></span><span></span><span></span></div>
+                <div class="cta-score-wc"><strong>Word count: 1,532</strong>Avg: 1,200</div>
+              </div>
+              <div class="cta-score-tabs">
+                <div class="t active">
+                  <svg width="9" height="9" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 1l2 4 4 .5-3 3 .8 4.5L8 11l-3.8 2L5 8.5 2 5.5l4-.5z" fill="currentColor"/></svg>
+                  Score
+                </div>
+                <div class="t">T Terms</div>
+                <div class="t">G SERP</div>
+                <div class="t">✦ GEO</div>
+              </div>
+              <div class="cta-score-card">
+                <div class="top">
+                  <div class="title">Headings</div>
+                  <div class="count">50/50 pts ⌄</div>
+                </div>
+                <div class="item">
+                  <div>
+                    <div class="item-name">H1</div>
+                    <div class="item-desc">Should contain one H1</div>
+                    <span class="pts" style="margin-top:3px; display:inline-block;">5/5 pts</span>
+                  </div>
+                  <div class="ratio">1/1</div>
+                </div>
+                <div class="item">
+                  <div>
+                    <div class="item-name">Keywords in H1</div>
+                    <div class="item-desc">H1 should include 1 keyword</div>
+                    <span class="pts" style="margin-top:3px; display:inline-block;">5/5 pts</span>
+                  </div>
+                  <div class="ratio">1/1</div>
+                </div>
+                <div class="item">
+                  <div>
+                    <div class="item-name">Keyword in H2</div>
+                    <div class="item-desc">H2 should include 1 keyword</div>
+                    <span class="pts" style="margin-top:3px; display:inline-block;">5/5 pts</span>
+                  </div>
+                  <div class="ratio">1/1</div>
+                </div>
+                <div class="item">
+                  <div>
+                    <div class="item-name">Number of titles</div>
+                    <div class="item-desc">Content should include X titles</div>
+                    <span class="pts" style="margin-top:3px; display:inline-block;">5/5 pts</span>
+                  </div>
+                  <div class="ratio">20/20</div>
+                </div>
+              </div>
+              <div class="cta-collapse">
+                <div class="label">Content</div>
+                <div class="right"><span class="ok">42/46</span> ⌄</div>
+              </div>
+              <div class="cta-collapse">
+                <div class="label">Meta</div>
+                <div class="right"><span class="count" style="background:#fff4e6;color:#ff9a4a;padding:2px 6px;border-radius:4px;font-size:9px;font-weight:600;">50/50 pts</span> ⌄</div>
+              </div>
+              <div class="cta-collapse">
+                <div class="label">Links</div>
+                <div class="right"><span class="bad">0/11</span> ⌄</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text + CTA -->
+        <div class="final-cta-text">
+          <div class="badge">READY</div>
+          <h2>Stop chasing search.<br>Start <em>showing up.</em></h2>
+          <p>Join the brands using Blym to rank on Google and get cited by AI, without the agency markup.<br>7 day free trial · No credit card required · Cancel anytime.</p>
+          <a href="#" class="btn btn-primary">Start for free →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer_component">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 0 L20 12 L32 16 L20 20 L16 32 L12 20 L0 16 L12 12 Z" fill="#212640"/>
+              <circle cx="16" cy="16" r="2.2" fill="#fff"/>
+            </svg>
+            blym
+          </div>
+          <p>Rank on Google. Get cited by AI. Built by the team behind Bloggle. 7,000+ companies in 70+ countries.</p>
+          <div class="footer-socials">
+            <a href="#" title="LinkedIn">in</a>
+            <a href="#" title="Instagram">IG</a>
+          </div>
+        </div>
+        <div class="footer_nav-column">
+          <div class="footer_title">Product</div>
+          <ul>
+            <li><a href="#">SEO Audit</a></li>
+            <li><a href="#">Action Plan</a></li>
+            <li><a href="#">Search Insights</a></li>
+            <li><a href="#">Writer</a></li>
+            <li><a href="#">Refresh</a></li>
+            <li><a href="#">Integrations</a></li>
+          </ul>
+        </div>
+        <div class="footer_nav-column">
+          <div class="footer_title">Solutions</div>
+          <ul>
+            <li><a href="#">For Ecommerce</a></li>
+            <li><a href="#">For SaaS and Services</a></li>
+            <li><a href="#">For Solopreneurs</a></li>
+          </ul>
+        </div>
+        <div class="footer_nav-column">
+          <div class="footer_title">Resources</div>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">AI SEO Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer_nav-column">
+          <div class="footer_title">Company</div>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Blym AI. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Cookies</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var supportsIO = 'IntersectionObserver' in window;
+
+      // Auto-tag common elements so authors don't have to mark every node.
+      var autoSelectors = [
+        '.hero h1', '.hero p', '.hero-cta', '.hero_video_wrap',
+        '.section-header', '.section-title', '.section-subtitle',
+        '.benefit-card', '.solution-card', '.feature-row',
+        '.pricing-card', '.testimonial-card', '.brand-mock',
+        '.honest-card', '.cta-section', '.footer-grid'
+      ];
+      autoSelectors.forEach(function (sel) {
+        document.querySelectorAll(sel).forEach(function (el) {
+          if (!el.classList.contains('reveal') && !el.classList.contains('no-reveal')) {
+            el.classList.add('reveal');
+          }
+        });
+      });
+
+      // Mark grids so children get stagger
+      ['.benefits-grid', '.solutions-grid', '.pricing-grid', '.footer-grid'].forEach(function (sel) {
+        document.querySelectorAll(sel).forEach(function (g) { g.classList.add('reveal-group'); });
+      });
+
+      var targets = document.querySelectorAll('.reveal, .reveal-group');
+
+      if (!supportsIO) {
+        targets.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+      targets.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+
+</body>
+</html>
